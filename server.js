@@ -1,14 +1,14 @@
 var http = require("http");
 var http = require("express");
 var app = express();
-var ejsEngine = require("ejs-locals");
+//var ejsEngine = require("ejs-locals");
 
 //Setup the View Engine
-app.engine("ejs", ejsEngine);  // Support master pages.
-app.set("view engine", "ejs")  
+//app.engine("ejs", ejsEngine);  // Support master pages.
+app.set("view engine", "vash")  
 
 app.get("/", function (req, res) {
-	res.render("ejs/index", { title: "Express + EJS" });
+	res.render("vash/index", { title: "Express + Vash" });
 });
 
 app.get("/api/users", function (req, res) {
