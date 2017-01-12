@@ -2,14 +2,16 @@ var http = require("http");
 var http = require("express");
 var app = express();
 //var ejsEngine = require("ejs-locals");
+var controllers = require("./controllers");
+
 
 //Setup the View Engine
 //app.engine("ejs", ejsEngine);  // Support master pages.
 app.set("view engine", "vash")  
 
-app.get("/", function (req, res) {
-	res.render("vash/index", { title: "Express + Vash" });
-});
+// Map the routes
+controllers.init(app);
+
 
 app.get("/api/users", function (req, res) {
 	res.set("Content-Type", "application/json");  // Add Headers
